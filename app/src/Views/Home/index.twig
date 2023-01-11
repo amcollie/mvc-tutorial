@@ -1,0 +1,14 @@
+{% extends 'base.twig' %}
+{% block title %}Welcome{% endblock title %}
+{% block body %}
+    <h1>Welcome!</h1>
+    <p>Hello, {{ name }}</p>
+    <ul>
+        {% for colour in colours %}  
+            <li>
+                <span style="background-color: <?= $colour ?>"></span>
+                {{ colour }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock body %}
