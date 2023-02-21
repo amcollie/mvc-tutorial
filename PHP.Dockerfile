@@ -5,7 +5,7 @@ WORKDIR /usr/local/apache2/htdocs
 
 RUN if [ ${APP_ENV} = "dev" ]; then \ 
     apt-get update && apt-get -y --no-install-recommends install git \
-    && php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin/ --filename=composer \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer \
     && rm -rf /var/lib/apt/lists/*; \
 fi
 
